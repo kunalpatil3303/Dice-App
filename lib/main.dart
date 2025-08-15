@@ -17,10 +17,18 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class DicePage extends StatelessWidget {
+class DicePage extends StatefulWidget {
+  const DicePage({super.key});
+
+  @override
+  State<DicePage> createState() => _DicePageState();
+}
+
+class _DicePageState extends State<DicePage> {
+  var LeftDieNumber = 1;
+
   @override
   Widget build(BuildContext context) {
-    var LeftDieNumber = 5;
     return Center(
       child: Row(
         children: [
@@ -29,8 +37,9 @@ class DicePage extends StatelessWidget {
               padding: EdgeInsets.all(16.0),
               child: TextButton(
                 onPressed: () {
-                  // Add your dice roll logic here
-                  print('Dice 1 pressed');
+                  setState(() {
+                    LeftDieNumber = 6;
+                  });
                 },
                 child: Image.asset('images/dice$LeftDieNumber.png'),
               ),
