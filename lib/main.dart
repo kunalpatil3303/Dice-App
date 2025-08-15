@@ -25,14 +25,26 @@ class DicePage extends StatelessWidget {
         children: [
           Expanded(
             child: Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Image.asset('images/dice1.png'),
+              padding: EdgeInsets.all(16.0),
+              child: TextButton(
+                onPressed: () {
+                  // Add your dice roll logic here
+                  print('Dice 1 pressed');
+                },
+                child: Image.asset('images/dice1.png'),
+              ),
             ),
           ),
           Expanded(
             child: Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Image.asset('images/dice1.png'),
+              padding: EdgeInsets.all(16.0),
+              child: TextButton(
+                onPressed: () {
+                  // Add your dice roll logic here
+                  print('Dice 2 pressed');
+                },
+                child: Image.asset('images/dice1.png'),
+              ),
             ),
           ),
         ],
