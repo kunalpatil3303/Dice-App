@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:math';
 
 void main() {
   runApp(MyApp());
@@ -26,6 +27,7 @@ class DicePage extends StatefulWidget {
 
 class _DicePageState extends State<DicePage> {
   var LeftDieNumber = 1;
+  var RightDieNumber = 2;
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +40,8 @@ class _DicePageState extends State<DicePage> {
               child: TextButton(
                 onPressed: () {
                   setState(() {
-                    LeftDieNumber = 6;
+                    LeftDieNumber = Random().nextInt(6) + 1;
+                    RightDieNumber = Random().nextInt(6) + 1;
                   });
                 },
                 child: Image.asset('images/dice$LeftDieNumber.png'),
@@ -50,10 +53,12 @@ class _DicePageState extends State<DicePage> {
               padding: EdgeInsets.all(16.0),
               child: TextButton(
                 onPressed: () {
-                  // Add your dice roll logic here
-                  print('Dice 2 pressed');
+                  setState(() {
+                    LeftDieNumber = Random().nextInt(6) + 1;
+                    RightDieNumber = Random().nextInt(6) + 1;
+                  });
                 },
-                child: Image.asset('images/dice1.png'),
+                child: Image.asset('images/dice$RightDieNumber.png'),
               ),
             ),
           ),
