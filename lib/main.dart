@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
 class DicePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var LeftDieNumber = 5;
     return Center(
       child: Row(
         children: [
@@ -31,7 +32,7 @@ class DicePage extends StatelessWidget {
                   // Add your dice roll logic here
                   print('Dice 1 pressed');
                 },
-                child: Image.asset('images/dice1.png'),
+                child: Image.asset('images/dice$LeftDieNumber.png'),
               ),
             ),
           ),
